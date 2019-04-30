@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+
+	{{ partial "header.html" . }}
+	<body>
+
+	{{ "<!-- Wrapper -->" | safeHTML }}
+		<div id="wrapper">
+
+			{{ partial "nav.html" . }}
+
+			{{ partial "banner.html" . }}
+            
+            <H1 style="text-align:center;"> About Guruvia </H1>
+            </br>
+            <div align="center">
+            <iframe width="560" height="315" align="middle" src="https://www.youtube.com/embed/6QtvWOKmwvg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+            </br>
+        
+
+		{{ "<!-- Main -->" | safeHTML }}
+			<div id="main">
+
+				{{ if .Site.Params.Tiles.enable }}
+					{{ partial "tile.html" . }}
+				{{ end }}
+
+				{{ if .Site.Params.Two.enable }}
+					{{ partial "two.html" . }}
+				{{ end }}
+
+			</div>
+
+		{{ "<!-- Contact -->" | safeHTML}}
+			{{ if .Site.Params.Contact.enable }}
+				{{ partial "contact.html" . }}
+			{{ end }}
+
+		{{ "<!-- Footer -->" | safeHTML}}
+			{{ if .Site.Params.Footer.enable }}
+				{{ partial "footer.html" . }}
+			{{ end }}
+
+		</div>
+
+	{{ "<!-- Scripts -->" | safeHTML}}
+		{{ partial "js.html" . }}
+
+	</body>
+<script type="text/javascript">
+var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || 
+{widgetcode:"a59765ea5811bf97801c68069a69eb005561df07fd1788b0f62a25a79fd1e64f", values:{},ready:function(){}};
+var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;
+s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);d.write("<div id='zsiqwidget'></div>");
+</script>
+</html>
