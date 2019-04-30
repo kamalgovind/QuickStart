@@ -1,0 +1,40 @@
+<html>
+<head>
+  <link rel="stylesheet" href="names.css">
+
+
+<script src="https://unpkg.com/@rstacruz/startup-name-generator@latest/dist/startup-name-generator.js" type="text/javascript"></script>
+
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    
+
+<script type="text/javascript">    
+$('#form').on('submit', e => {
+  e.preventDefault();
+
+  var input = $('#input').val();
+  var $results = $('#results');
+  var items = StartupNameGenerator(input);
+
+  $results.html('');
+
+  items.forEach((item, idx) => {
+    $('<a class="result-item" target="_blank">').
+    html(`<span>${item}</span>`).
+    attr('href', `https://www.namecheap.com/domains/registration/results.aspx?domain=${item.toLowerCase()}.com`).
+    appendTo($results);
+  });
+});
+</script>    
+</head>
+<body>
+<form id='form' class='input-form'>
+  <label>Let's name your startup using the words Man:</label>
+  <input type='text' class='input' id='input' placeholder='some words' value='run fit'>
+  <button class='submit'>Go Daddy</button>
+</form>
+<div id='results' class='results-list'>
+</div>
+    </body>
+</html>
